@@ -55,12 +55,12 @@ const colorMap: Record<string, string> = {
   pink: "border-pink-400/30 hover:border-pink-400/60",
 };
 
-const barColorMap: Record<string, string> = {
-  blue: "from-neon-blue to-neon-purple",
-  purple: "from-neon-purple to-pink-400",
-  green: "from-green-400 to-neon-blue",
-  yellow: "from-yellow-400 to-orange-400",
-  pink: "from-pink-400 to-neon-purple",
+const barGradientMap: Record<string, string> = {
+  blue: "linear-gradient(to right, #00d4ff, #a855f7)",
+  purple: "linear-gradient(to right, #a855f7, #f472b6)",
+  green: "linear-gradient(to right, #4ade80, #00d4ff)",
+  yellow: "linear-gradient(to right, #facc15, #fb923c)",
+  pink: "linear-gradient(to right, #f472b6, #a855f7)",
 };
 
 const titleColorMap: Record<string, string> = {
@@ -118,9 +118,10 @@ export function SkillsSection() {
                   </div>
                   <div className="h-1.5 bg-muted rounded-full overflow-hidden">
                     <div
-                      className={`h-full rounded-full bg-gradient-to-r ${barColorMap[category.color]}`}
+                      className="h-full rounded-full"
                       style={{
                         width: `${skill.level}%`,
+                        background: barGradientMap[category.color],
                         transition: "width 1s ease",
                       }}
                     />
